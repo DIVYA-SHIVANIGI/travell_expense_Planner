@@ -1,0 +1,7 @@
+com\lucy\split_mate\config\WebConfig.class
+com\lucy\split_mate\controller\UserController.class
+com\lucy\split_mate\SplitMateBackendApplication.class
+com\lucy\split_mate\service\UserService.class
+com\lucy\split_mate\config\WebConfig$1.class
+com\lucy\split_mate\model\User.class
+com\lucy\split_mate\repository\UserRepository.class

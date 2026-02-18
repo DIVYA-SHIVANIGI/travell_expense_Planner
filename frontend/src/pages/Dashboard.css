@@ -1,0 +1,281 @@
+/* Dashboard.css */
+/* GLOBAL MICRO-INTERACTIONS */
+* {
+  transition: 
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+:root {
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-text: #111827;
+  --muted-text: #374151;
+}
+
+[data-theme="dark"] {
+  --card-bg: rgba(17, 24, 39, 0.85);
+  --card-text: #f9fafb;
+  --muted-text: #d1d5db;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #3a7bd5, #00d2ff);
+  min-height: 100vh;
+}
+
+/* Container */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+/* NAVBAR MENU INTERACTION */
+.menu li {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.menu li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #22c55e;
+  transition: width 0.25s ease;
+}
+
+.menu li:hover::after {
+  width: 100%;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: 60px;
+  padding: 25px 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar li:hover {
+  background: #00d2ff;
+  color: #000;
+  transform: translateX(5px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: 240px;
+  margin-top: 60px;
+  padding: 30px;
+  color: #333;
+}
+
+/* Welcome Card */
+.welcome-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Trip Cards */
+.trips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.trip-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+.btn {
+  display: block;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 10px 0;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Notification Bell */
+.bell-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+}
+
+.dropdown-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px;
+}
+/* ===== DARK MODE CONTENT VISIBILITY FIX ===== */
+
+[data-theme="dark"] .welcome-card,
+[data-theme="dark"] .trip-card {
+  background: rgba(0, 0, 0, 0.55); /* darker glass */
+  color: #ffffff;                 /* white text */
+}
+
+[data-theme="dark"] .welcome-card p,
+[data-theme="dark"] .trip-card p,
+[data-theme="dark"] .trip-card h3 {
+  color: #f9fafb;                 /* readable white */
+}
+/* CARD MICRO-INTERACTIONS */
+.stat-card,
+.feature-box,
+.trip-card,
+.welcome-card {
+  will-change: transform;
+}
+
+.stat-card:hover,
+.feature-box:hover,
+.trip-card:hover,
+.welcome-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+}
+
+/* BUTTON INTERACTIONS */
+button {
+  cursor: pointer;
+  will-change: transform;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+button:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+/* ICON MICRO-INTERACTION */
+.feature-box svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.feature-box:hover svg {
+  transform: scale(1.25) rotate(6deg);
+  color: #16a34a;
+}
+button:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 3px;
+}
+/* ================= FORCE CARD FLOAT (FINAL OVERRIDE) ================= */
+.welcome-card,
+.trip-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.welcome-card:hover,
+.trip-card:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35) !important;
+}
+

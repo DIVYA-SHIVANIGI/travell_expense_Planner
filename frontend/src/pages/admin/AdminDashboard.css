@@ -1,0 +1,70 @@
+.admin-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.logout-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.logout-btn {
+  background-color: #ff7675;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d63031;
+}
+
+.admin-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+}
+
+.admin-card h2 {
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.admin-card p {
+  color: #636e72;
+  margin-bottom: 30px;
+}
+
+.admin-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option-btn {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #4834d4;
+}

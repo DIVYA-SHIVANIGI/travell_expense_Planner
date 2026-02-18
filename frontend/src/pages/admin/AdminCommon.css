@@ -1,0 +1,88 @@
+.admin-page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.admin-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  color: #fff;
+  width: 85%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.admin-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.delete-btn,
+.view-btn {
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-btn {
+  background: #00c853;
+}
+
+.delete-btn:hover {
+  background: #ff1744;
+}
+
+.view-btn:hover {
+  background: #009624;
+}
+
+/* Reports */
+.report-boxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.report-card {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 20px 40px;
+  border-radius: 15px;
+  margin: 10px;
+  text-align: center;
+  flex: 1;
+  max-width: 250px;
+}
+
+.report-card h3 {
+  margin-bottom: 10px;
+}
+
+.report-card p {
+  font-size: 22px;
+  font-weight: bold;
+}

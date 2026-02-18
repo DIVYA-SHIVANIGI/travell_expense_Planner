@@ -1,0 +1,418 @@
+/* GLOBAL MICRO-INTERACTIONS */
+* {
+  transition: 
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+:root {
+  --bg: #f4f6f8;
+  --text: #1f2933;
+  --card: #ffffff;
+  --nav: #0f172a;
+}
+
+[data-theme="dark"] {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --card: #020617;
+  --nav: #020617;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background: var(--nav);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-actions button {
+  margin-left: 10px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-btn {
+  background: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, var(--card), #e5e7eb);
+}
+
+
+/* FEATURES */
+.features-section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 26px;
+}
+
+.feature-box {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* SCREENSHOTS */
+.screenshots {
+  padding: 40px 20px 80px;
+  text-align: center;
+}
+
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.shot-card {
+  height: 140px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* FINAL CTA */
+.final-cta {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #020617;
+  color: #9ca3af;
+  text-align: center;
+  padding: 14px;
+}
+
+/* ANIMATIONS */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* FIX: Stats text visibility in DARK MODE */
+[data-theme="dark"] .stat-card h3 {
+  color: #111827;   /* dark readable text */
+}
+
+[data-theme="dark"] .stat-card p {
+  color: #374151;   /* slightly muted but visible */
+}
+/* CARD MICRO-INTERACTIONS */
+.stat-card,
+.feature-box,
+.trip-card,
+.welcome-card {
+  will-change: transform;
+}
+
+.stat-card:hover,
+.feature-box:hover,
+.trip-card:hover,
+.welcome-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+}
+
+/* BUTTON INTERACTIONS */
+button {
+  cursor: pointer;
+  will-change: transform;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+button:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+/* ================= FORCE CARD FLOAT (FINAL OVERRIDE) ================= */
+.stat-card,
+.feature-box {
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.stat-card:hover,
+.feature-box:hover {
+  transform: translateY(-12px) scale(1.03) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3) !important;
+}
+.homepage-preview {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 50px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.homepage-preview:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.4);
+}
+.app-preview {
+  background: linear-gradient(to bottom, #f5f7fa, #e9eff5);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.app-preview h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.app-preview p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.homepage-preview {
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 18px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.25);
+}
+.screenshots {
+  padding: 90px 10%;
+  background: linear-gradient(135deg, #1e90ff, #00c6ff);
+  text-align: center;
+}
+
+.screenshots h2 {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.preview-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* BIG MAIN DASHBOARD */
+.main-preview img {
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 20px;
+  box-shadow: 0 50px 150px rgba(0,0,0,0.45);
+  margin-bottom: 30px;
+}
+
+
+.main-preview p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+/* SMALL FEATURE SCREENS */
+.sub-previews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.sub-previews div {
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+}
+
+.sub-previews img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.sub-previews span {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ===== HERO SECTION ===== */
+.hero h1 {
+  font-size: 3rem;   /* BIG heading */
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* ===== BUTTONS ===== */
+.primary {
+  font-size: 1rem;
+  padding: 12px 22px;
+}
+
+.primary.big {
+  font-size: 1.1rem;
+  padding: 14px 30px;
+}
+
+/* ===== STATS CARDS ===== */
+.stat-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 1rem;
+}
+
+/* ===== SECTION HEADINGS ===== */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.features-section h2,
+.screenshots h2,
+.final-cta h2 {
+  font-size: 2.3rem;
+}
+
+/* ===== FEATURE BOX TEXT ===== */
+.feature-box h4 {
+  font-size: 1.2rem;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  font-size: 0.9rem;
+}
+/* ================== APP SCREENSHOTS SECTION ================== */
+
+.screenshots {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #1e88e5, #00bcd4);
+  color: white;
+  text-align: center;
+}
+
+.screenshots h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  font-weight: 800;
+}
+
+/* Main big dashboard */
+.main-preview img {
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 20px;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.5);
+}
+
+.main-preview p {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Feature screens */
+.sub-previews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-top: 80px;
+}
+
+.sub-previews div {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  transition: transform 0.4s ease;
+}
+
+.sub-previews div:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.sub-previews img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.sub-previews span {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}

@@ -1,0 +1,207 @@
+.manage-users-container {
+  background: #f9fafc;
+  min-height: 100vh;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.manage-users-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+.manage-users-table {
+  width: 80%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manage-users-table th,
+.manage-users-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.manage-users-table th {
+  background: #007bff;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.manage-users-table tr:hover {
+  background-color: #f1f7ff;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+  transform: scale(1.05);
+}
+
+/* ✅ Back button styling */
+.back-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+
+/* ✅ Confirmation Modal Styling */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.confirm-box {
+  background: white;
+  padding: 30px 45px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.confirm-box h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 22px;
+}
+
+.confirm-box p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #444;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.yes-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.no-btn {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.yes-btn:hover {
+  background-color: #c62828;
+  transform: scale(1.05);
+}
+
+.no-btn:hover {
+  background-color: #1d3557;
+  transform: scale(1.05);
+}
+
+/* ✅ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ✅ Confirm Button */
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-right: 8px;
+}
+
+.confirm-btn:hover {
+  background-color: #218838;
+}
+
+/* ✅ Confirmed / Pending Status */
+.confirmed-status {
+  color: green;
+  font-weight: bold;
+}
+
+.pending-status {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
